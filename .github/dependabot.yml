@@ -16,4 +16,3 @@ updates:
     schedule:
       interval: "daily"
     reviewers: ["money-flow/frontend"]
-
