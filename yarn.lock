@@ -1578,7 +1578,7 @@
     history "^5.3.0"
     react-router-dom "^6.2.2"
 
-"@remix-run/server-runtime@1.6.3", "@remix-run/server-runtime@^1.6.3":
+"@remix-run/server-runtime@1.6.3":
   version "1.6.3"
   resolved "https://registry.npmjs.org/@remix-run/server-runtime/-/server-runtime-1.6.3.tgz"
   integrity sha512-B4M0msXmWWceP73Iw5EPJxPo9pT/oHwUqksX8sCmwQ+WftH5Y5eVXREp1IaaY72nEStdKSuBTfFMJETX/zUBvw==
@@ -1591,7 +1591,7 @@
     set-cookie-parser "^2.4.8"
     source-map "^0.7.3"
 
-"@remix-run/server-runtime@1.6.4":
+"@remix-run/server-runtime@1.6.4", "@remix-run/server-runtime@^1.6.4":
   version "1.6.4"
   resolved "https://registry.yarnpkg.com/@remix-run/server-runtime/-/server-runtime-1.6.4.tgz#c684d6ca4424ceacfb2458ae2a5ee06a17bd24f5"
   integrity sha512-CHFJzg5+7yFLndZJnYvr0ZqtNhkmu0txk5hCAEtADvb19M56RywMT6s2u3POnAPWmjpvEA8hv5IpayfUi6xeRg==
