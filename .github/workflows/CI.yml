@@ -99,12 +99,13 @@ jobs:
         with:
           node-version: 14
 
-      - uses: microsoft/playwright-github-action@v1
-
       - name: 📥 Download deps
         uses: bahmutov/npm-install@v1
         with:
           install-command: yarn --frozen-lockfile --silent
+
+      - name: Install Playwright
+        run: npx playwright install-deps
 
       - name: 🏗 test
         run: yarn test:e2e
