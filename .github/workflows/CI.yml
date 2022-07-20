@@ -119,6 +119,9 @@ jobs:
 
   dependabot-auto-approve:
     needs: [lint, typecheck, vitest, cypress]
+    permissions:
+      contents: write
+      pull-requests: write
     runs-on: ubuntu-latest
     if: ${{ github.actor == 'dependabot[bot]' }}
     steps:
