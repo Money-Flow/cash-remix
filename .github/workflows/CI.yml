@@ -60,64 +60,31 @@ jobs:
       - name: 🔎 Type check
         run: yarn typecheck
 
-  # vitest:
-  #   name: ⚡ Vitest
-  #   runs-on: ubuntu-latest
-  #   steps:
-  #     - name: 🛑 Cancel Previous Runs
-  #       uses: styfle/cancel-workflow-action@0.10.0
+  unit:
+    name: Unit testing
+    runs-on: ubuntu-latest
+    steps:
+      - name: 🛑 Cancel Previous Runs
+        uses: styfle/cancel-workflow-action@0.10.0
 
-  #     - name: ⬇️ Checkout repo
-  #       uses: actions/checkout@v3
+      - name: ⬇️ Checkout repo
+        uses: actions/checkout@v3
 
-  #     - name: ⎔ Setup node
-  #       uses: actions/setup-node@v3
-  #       with:
-  #         node-version: 14
+      - name: ⎔ Setup node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 14
 
-  #     - name: 📥 Download deps
-  #       uses: bahmutov/npm-install@v1
-  #       with:
-  #         install-command: yarn --frozen-lockfile --silent
+      - name: 📥 Download deps
+        uses: bahmutov/npm-install@v1
+        with:
+          useLockFile: false
 
-  #     - name: ⚡ Run vitest
-  #       run: yarn test --coverage
+      - name: 🏗 test
+        run: yarn test:unit
 
-  # cypress:
-  #   name: ⚫️ Cypress
-  #   runs-on: ubuntu-latest
-  #   steps:
-  #     - name: 🛑 Cancel Previous Runs
-  #       uses: styfle/cancel-workflow-action@0.10.0
-
-  #     - name: ⬇️ Checkout repo
-  #       uses: actions/checkout@v3
-
-  #     - name: 🏄 Copy test env vars
-  #       run: cp .env.example .env
-
-  #     - name: ⎔ Setup node
-  #       uses: actions/setup-node@v3
-  #       with:
-  #         node-version: 14
-
-  #     - name: 📥 Download deps
-  #       uses: bahmutov/npm-install@v1
-  #       with:
-  #         install-command: yarn --frozen-lockfile --silent
-
-  #     - name: 🏗 Build
-  #       run: yarn build
-
-  #     - name: 🌳 Cypress run
-  #       uses: cypress-io/github-action@v4
-  #       with:
-  #         start: yarn dev
-  #         wait-on: "http://localhost:8811"
-  #       env:
-  #         PORT: "8811"
-
-  e2e-tests:
+  e2e:
+    name: E2E testing
     runs-on: ubuntu-latest # or macos-latest, windows-latest
 
     steps:
@@ -148,8 +115,31 @@ jobs:
           name: test-artifacts
           path: path/to/artifacts
 
+<<<<<<< HEAD
+=======
+  dependabot-automerge:
+    needs: [lint, typecheck, unit, e2e]
+    permissions:
+      contents: write
+    runs-on: ubuntu-latest
+    if: ${{ github.actor == 'dependabot[bot]' }}
+    steps:
+      - name: Dependabot metadata
+        id: metadata
+        uses: dependabot/fetch-metadata@v1.1.1
+        with:
+          github-token: "${{ secrets.GITHUB_TOKEN }}"
+      - name: Enable auto-merge for Dependabot PRs
+        if: ${{contains(steps.metadata.outputs.dependency-names, 'my-dependency') && steps.metadata.outputs.update-type == 'version-update:semver-patch'}}
+        run: gh pr merge --auto --merge "$PR_URL"
+        env:
+          PR_URL: ${{github.event.pull_request.html_url}}
+          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+
+>>>>>>> b3d485c (test: remove cypress, update gh actions)
   deploy:
-    needs: [lint, typecheck, e2e-tests]
+    needs: [lint, typecheck, unit, e2e]
+    if: github.ref == 'refs/heads/master' || github.ref == 'refs/heads/dev'
     runs-on: ubuntu-latest
 
     steps:
