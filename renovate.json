@@ -3,5 +3,12 @@
   "extends": [
     "config:base"
   ],
+  "packageRules": [
+    {
+      "matchDepTypes": ["dependencies", "devDependencies"],
+      "matchPackagePatterns": ["lint", "prettier"],
+      "automerge": true
+    }
+  ],
   "baseBranches": ["dev"]
 }
