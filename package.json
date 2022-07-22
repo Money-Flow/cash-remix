@@ -29,7 +29,7 @@
     "@architect/architect": "^10.3.3",
     "@architect/functions": "^5.1.0",
     "@remix-run/architect": "^1.6.4",
-    "@remix-run/node": "^1.6.3",
+    "@remix-run/node": "^1.6.5",
     "@remix-run/react": "^1.6.5",
     "@remix-run/server-runtime": "^1.6.5",
     "bcryptjs": "2.4.3",
