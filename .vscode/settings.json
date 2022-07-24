@@ -5,7 +5,10 @@
         "bahmutov",
         "buildscript",
         "codeql",
+        "esbuild",
+        "jagstang",
         "styfle",
+        "tailwindcss",
         "typecheck",
         "vitest"
     ]
