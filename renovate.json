@@ -3,5 +3,13 @@
   "extends": [
     "config:base"
   ],
-  "baseBranches": ["dev"]
+  "baseBranches": ["dev"],
+  "packageRules": [
+    {
+      "matchDepTypes": ["dependencies", "devDependencies"],
+      "automerge": true,
+      "automergeType":  "pr",
+      "automergeStrategy": "rebase"
+    }
+  ]
 }
