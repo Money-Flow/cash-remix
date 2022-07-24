@@ -3,12 +3,13 @@
   "extends": [
     "config:base"
   ],
+  "baseBranches": ["dev"],
   "packageRules": [
     {
       "matchDepTypes": ["dependencies", "devDependencies"],
-      "matchPackagePatterns": ["lint", "prettier"],
-      "automerge": true
+      "automerge": true,
+      "automergeType":  "pr",
+      "automergeStrategy": "rebase"
     }
-  ],
-  "baseBranches": ["dev"]
+  ]
 }
