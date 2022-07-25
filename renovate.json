@@ -6,10 +6,13 @@
   "baseBranches": ["dev"],
   "packageRules": [
     {
-      "matchDepTypes": ["dependencies", "devDependencies"],
-      "automerge": true,
-      "automergeType":  "pr",
-      "automergeStrategy": "rebase"
+      "matchUpdateTypes": ["minor", "patch", "pin", "digest"],
+      "automerge": true
+    },
+    {
+      "matchDepTypes": ["devDependencies"],
+      "automerge": true
     }
-  ]
+  ],
+  "platformAutomerge": true
 }
