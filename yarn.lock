@@ -15,13 +15,13 @@
     "@jridgewell/gen-mapping" "^0.1.0"
     "@jridgewell/trace-mapping" "^0.3.9"
 
-"@architect/architect@10.4.0":
-  version "10.4.0"
-  resolved "https://registry.yarnpkg.com/@architect/architect/-/architect-10.4.0.tgz#caee88114a547854c191ba1d530eaf88a330e160"
-  integrity sha512-urAuyA/Mx48oDSpXM/Q9z3Ei+ninKZrDzK+emb4yS0h6g6rZuV4h5vQW5GwoJARTT3zveA2jlNwRG2BN7wwzUQ==
+"@architect/architect@10.4.1":
+  version "10.4.1"
+  resolved "https://registry.yarnpkg.com/@architect/architect/-/architect-10.4.1.tgz#2a6ca150f78a53c6180918226385d5073c811ded"
+  integrity sha512-0Iv/rYPM4dZnL7oD5H87rPR3mGBCn2gdmPYyLWU6j2cljFTxin1KBtGhHqcsu4r9gcgcyQpGHLtgyDczjveQPw==
   dependencies:
     "@architect/create" "4.0.5"
-    "@architect/deploy" "4.2.0"
+    "@architect/deploy" "4.2.1"
     "@architect/destroy" "3.0.4"
     "@architect/env" "3.0.4"
     "@architect/hydrate" "3.0.4"
@@ -47,10 +47,10 @@
     lambda-runtimes "~1.1.2"
     minimist "~1.2.6"
 
-"@architect/deploy@4.2.0":
-  version "4.2.0"
-  resolved "https://registry.yarnpkg.com/@architect/deploy/-/deploy-4.2.0.tgz#cd713234179ed5e7652d7859f31dcc150ee13fd9"
-  integrity sha512-p1c0ZLhL2DZXq+P5dGFAgsmDDIUTJLWhg6hYYeF58WCc7Ku8NLw5j6Spnwlkat9WFOKBRu7WPypHC8P3XlzNnA==
+"@architect/deploy@4.2.1":
+  version "4.2.1"
+  resolved "https://registry.yarnpkg.com/@architect/deploy/-/deploy-4.2.1.tgz#5a5ccd12ab0dada2ab46ade804d70bcc20cb82cc"
+  integrity sha512-paTSDFHWmfTtO2e5xX2oWKIGDnZiCa3RV9QPHZmJrolSzMtCngX0+8Dvz6sSGvCd9lXhhzTPTLXuWavuMDt5+A==
   dependencies:
     "@architect/create" "~4.0.5"
     "@architect/hydrate" "~3.0.4"
